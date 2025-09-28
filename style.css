@@ -7,7 +7,6 @@ body {
     font-family: Tahoma, Arial, sans-serif;
 }
 
-/* الهيدر */
 .header {
     position: relative;
     width: 100%;
@@ -34,7 +33,6 @@ body {
     font-weight: bold;
 }
 
-/* الصورة */
 .image {
     margin: 30px auto;
     width: 250px;
@@ -63,8 +61,6 @@ body {
     filter: brightness(1.2);
 }
 
-/* النص */
-
 .textalign {
     text-align:center;
     margin-bottom:30px;
@@ -75,7 +71,7 @@ body {
     
     bottom: 60px;
     right: 20px;
-    color: #fff;
+    color: #000000;
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 25px;
@@ -120,7 +116,6 @@ body {
     background: #cd146a;
 }
 
-/* الفوتر */
 footer {
     background: rgba(0,0,0,0.1);
     color: #ccc;
@@ -129,32 +124,34 @@ footer {
     margin-top: auto;
 }
 
-footer a {
-    color: #1877f2; /* لون رسمي للفيسبوك */
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 30px; /* تكبير حجم الأيقونة */
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%; /* يجعلها دائرة */
-    background-color: #fff; /* خلفية بيضاء أو تقدر تغيرها */
-    text-align: center;
-    transition: 0.3s;
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: white;
+  margin: 5px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-footer a:hover {
-    color: #fff;
-    background-color: #1877f2; /* عند الهور يظهر اللون الرسمي كامل */
+.instagram-icon {
+  background: radial-gradient(circle at 30% 107%, 
+      #fdf497 0%, 
+      #fdf497 5%, 
+      #fd5949 45%, 
+      #d6249f 60%, 
+      #285AEB 90%);
 }
 
-/* لو عندك انستجرام */
-footer a.instagram {
-    color: #C13584; /* اللون الرسمي للانستجرام */
+.facebook-icon {
+  background: #1877f2;
 }
 
-footer a.instagram:hover {
-    color: #fff;
-    background-color: #C13584;
+.icon-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
