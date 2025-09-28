@@ -1,0 +1,160 @@
+body {
+    margin: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+/* الهيدر */
+.header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+.header:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0);
+}
+
+.text1 {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text2 {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* الصورة */
+.image {
+    margin: 30px auto;
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ddd;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.image:hover {
+    border-color: #4beae8;
+    box-shadow: 0 0 20px rgba(46, 192, 211, 0.6);
+}
+
+.image:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* النص */
+
+.textalign {
+    text-align:center;
+    margin-bottom:30px;
+    font-size: 30px;
+}
+
+.bottom-right {
+    
+    bottom: 60px;
+    right: 20px;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 25px;
+}
+
+.grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background: #04b5b2;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn:hover {
+    background: #cd146a;
+}
+
+/* الفوتر */
+footer {
+    background: rgba(0,0,0,0.1);
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0; /* زيادة المسافة عموديًا */
+    margin-top: auto;
+}
+
+footer a {
+    color: #1877f2; /* لون رسمي للفيسبوك */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 30px; /* تكبير حجم الأيقونة */
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%; /* يجعلها دائرة */
+    background-color: #fff; /* خلفية بيضاء أو تقدر تغيرها */
+    text-align: center;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    background-color: #1877f2; /* عند الهور يظهر اللون الرسمي كامل */
+}
+
+/* لو عندك انستجرام */
+footer a.instagram {
+    color: #C13584; /* اللون الرسمي للانستجرام */
+}
+
+footer a.instagram:hover {
+    color: #fff;
+    background-color: #C13584;
+}
