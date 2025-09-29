@@ -29,4 +29,3 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = "☀️ الوضع الفاتح";
   }
 });
-
