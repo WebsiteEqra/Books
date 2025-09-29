@@ -1,255 +1,255 @@
 /* إعدادات عامة */
-body {
-    margin: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Tahoma, Arial, sans-serif;
-    transition: background 0.3s, color 0.3s;
+body { 
+    margin: 20px; /* مسافة خارجية حول الصفحة */
+    min-height: 100vh; /* الحد الأدنى للارتفاع يملأ الشاشة */
+    display: flex; /* استخدام Flexbox لترتيب العناصر */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    font-family: Tahoma, Arial, sans-serif; /* الخط المستخدم */
+    transition: background 0.3s, color 0.3s; /* انتقال سلس عند تغيير الوضع */
 }
 
 /* ====== الوضع الفاتح ====== */
-body.light {
-    background: #f9f9f9;
-    color: #222;
+body.light { 
+    background: #f9f9f9; /* خلفية فاتحة */
+    color: #222; /* لون النص داكن */
 }
 
 body.light .header {
-    background: linear-gradient(90deg, #3498db, #2980b9);
+    background: linear-gradient(90deg, #2b2b2b, #c7baba); /* تدرج رصاصي */
 }
 
 body.light .text {
-    color: #2c3e50;
+    color: #2c3e50; /* نص بلون داكن */
 }
 
 body.light .card {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff; /* خلفية الكرت بيضاء */
+    color: #000; /* النص أسود */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ظل خفيف */
 }
 
 body.light footer {
-    background: rgba(0, 0, 0, 0.05);
-    color: #333;
+    background: rgba(0, 0, 0, 0.05); /* خلفية رمادية فاتحة */
+    color: #333; /* النص غامق */
 }
 
 /* ====== الوضع الداكن ====== */
-body.dark {
-    background: #121212;
-    color: #f1f1f1;
+body.dark { 
+    background: #121212; /* خلفية داكنة جدًا */
+    color: #f1f1f1; /* نص فاتح */
 }
 
 body.dark .header {
-    background: linear-gradient(90deg, #1c1c1c, #2c2c2c);
+    background: linear-gradient(90deg, #2b2b2b, #c7baba); /* تدرج رصاصي */
 }
 
 body.dark .text {
-    color: #f5f5f5;
+    color: #f5f5f5; /* النص فاتح */
 }
 
 body.dark .card {
-    background: #1e1e1e;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    background: #1e1e1e; /* خلفية الكرت داكنة */
+    color: #fff; /* النص أبيض */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* ظل داكن */
 }
 
 body.dark footer {
-    background: rgba(255, 255, 255, 0.05);
-    color: #bbb;
+    background: rgba(255, 255, 255, 0.05); /* خلفية شبه شفافة فاتحة */
+    color: #bbb; /* النص رمادي فاتح */
 }
 
 /* ====== الهيدر ====== */
 .header {
-    position: relative;
-    width: 100%;
-    height: 70px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    position: relative; /* تحديد موضع نسبي */
+    width: 100%; /* عرض كامل */
+    height: 70px; /* ارتفاع محدد */
+    color: #fff; /* النص أبيض */
+    display: flex; /* استخدام Flexbox */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر على الطرفين */
+    padding: 0 20px; /* مسافة داخلية يمين ويسار */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* ظل أسفل */
+    transition: 0.3s; /* تأثير سلس عند التغيير */
 }
 
 .header:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    transform: translateY(-5px); /* تحريك للأعلى عند المرور */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3); /* تكبير الظل */
 }
 
 .text {
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 15px;
+    font-size: 16px; /* حجم النص */
+    font-weight: 500; /* سماكة متوسطة */
+    margin-left: 15px; /* مسافة يسار */
 }
 
 /* ====== صندوق البحث ====== */
 .search-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; /* ترتيب أفقي */
+    align-items: center; /* محاذاة عمودي */
+    gap: 8px; /* مسافة بين العناصر */
 }
 
 .search-box input {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    font-size: 14px;
-    width: 200px;
-    transition: 0.3s;
+    padding: 6px 12px; /* مسافة داخلية */
+    border: none; /* بدون حدود */
+    border-radius: 20px; /* زوايا دائرية */
+    outline: none; /* إزالة الإطار عند التركيز */
+    font-size: 14px; /* حجم الخط */
+    width: 200px; /* عرض محدد */
+    transition: 0.3s; /* تأثير سلس */
 }
 
 .search-box input:focus {
-    box-shadow: 0 0 8px #1abc9c;
+    box-shadow: 0 0 8px #1abc9c; /* ظل أخضر عند الكتابة */
 }
 
 .search-box button {
-    padding: 6px 14px;
-    background: #1abc9c;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
+    padding: 6px 14px; /* مسافة داخلية */
+    background: #1abc9c; /* لون الخلفية أخضر */
+    border: none; /* بدون حدود */
+    border-radius: 20px; /* زوايا دائرية */
+    color: white; /* النص أبيض */
+    cursor: pointer; /* شكل المؤشر */
+    font-size: 14px; /* حجم الخط */
+    transition: 0.3s; /* تأثير سلس */
 }
 
 .search-box button:hover {
-    background: #16a085;
+    background: #16a085; /* تغيير اللون عند المرور */
 }
 
 /* زر تبديل الوضع */
 #toggleMode {
-    margin-right: 15px;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    background: #1abc9c;
-    font-size: 14px;
-    transition: 0.3s;
-    color: white;
+    margin-right: 15px; /* مسافة يمين */
+    padding: 6px 14px; /* مسافة داخلية */
+    border: none; /* بدون حدود */
+    border-radius: 20px; /* زوايا دائرية */
+    cursor: pointer; /* شكل اليد */
+    background: #1abc9c; /* لون أخضر */
+    font-size: 14px; /* حجم النص */
+    transition: 0.3s; /* تأثير سلس */
+    color: white; /* النص أبيض */
 }
 
 #toggleMode:hover {
-    background: #16a085;
+    background: #16a085; /* لون مختلف عند المرور */
 }
 
 /* ====== صورة دائرية ====== */
 .image {
-    margin: 30px auto;
-    width: 380px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #ddd;
-    transition: 0.4s;
-    cursor: pointer;
+    margin: 30px auto; /* مسافة فوق وتحت وتوسيط أفقي */
+    width: 380px; /* العرض */
+    height: 250px; /* الارتفاع */
+    border-radius: 50%; /* يجعلها دائرية */
+    overflow: hidden; /* إخفاء الأجزاء الزائدة */
+    border: 5px solid #ddd; /* إطار رمادي */
+    transition: 0.4s; /* تأثير سلس */
+    cursor: pointer; /* شكل اليد */
 }
 
 .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.4s;
+    width: 100%; /* تغطي كامل العرض */
+    height: 100%; /* تغطي كامل الارتفاع */
+    object-fit: cover; /* ملائمة بدون تشويه */
+    transition: 0.4s; /* تأثير سلس */
 }
 
 .image:hover {
-    border-color: #4beae8;
-    box-shadow: 0 0 20px rgba(46, 192, 211, 0.6);
+    border-color: #4beae8; /* تغيير لون الإطار */
+    box-shadow: 0 0 20px rgba(46, 192, 211, 0.6); /* ظل ملون */
 }
 
 .image:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+    transform: scale(1.1); /* تكبير الصورة */
+    filter: brightness(1.2); /* زيادة السطوع */
 }
 
 /* ====== النصوص ====== */
 .textalign {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 30px;
+    text-align: center; /* توسيط النص */
+    margin-bottom: 30px; /* مسافة أسفل */
+    font-size: 30px; /* حجم النص */
 }
 
 .bottom-right {
-    text-align: right;
-    bottom: 60px;
-    right: 20px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 25px;
+    text-align: right; /* النص لليمين */
+    bottom: 60px; /* مسافة من الأسفل */
+    right: 20px; /* مسافة من اليمين */
+    padding: 8px 12px; /* مسافة داخلية */
+    border-radius: 6px; /* زوايا دائرية */
+    font-size: 25px; /* حجم النص */
 }
 
 /* ====== شبكة الكروت ====== */
 .grid {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    margin-top: 20px; /* مسافة فوق */
+    display: grid; /* استخدام Grid */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* أعمدة متجاوبة */
+    gap: 20px; /* مسافة بين العناصر */
 }
 
 .card {
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    transition: 0.3s;
+    border-radius: 10px; /* زوايا دائرية */
+    padding: 10px; /* مسافة داخلية */
+    text-align: center; /* توسيط النصوص */
+    transition: 0.3s; /* تأثير سلس */
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px); /* تحريك لأعلى */
 }
 
 .card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 100%; /* يغطي العرض */
+    height: 250px; /* ارتفاع ثابت */
+    object-fit: cover; /* ملاءمة */
+    border-radius: 8px; /* زوايا دائرية */
 }
 
 /* ====== الأزرار ====== */
 .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-top: 20px;
-    background: #04b5b2;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+    display: inline-block; /* عرض كزر */
+    padding: 10px 15px; /* مسافة داخلية */
+    margin-top: 20px; /* مسافة فوق */
+    background: #04b5b2; /* لون خلفية */
+    color: #ffffff; /* لون النص */
+    border: none; /* بدون حدود */
+    border-radius: 8px; /* زوايا دائرية */
+    text-decoration: none; /* بدون خط */
+    font-weight: bold; /* خط عريض */
+    transition: background 0.3s; /* تأثير سلس */
 }
 
 .btn:hover {
-    background: #cd146a;
+    background: #cd146a; /* لون عند المرور */
 }
 
 /* ====== الفوتر ====== */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
+    text-align: center; /* توسيط المحتوى */
+    padding: 20px 0; /* مسافة داخلية عمودية */
+    margin-top: auto; /* دفع الفوتر للأسفل */
 }
 
 /* ====== أيقونات السوشيال ====== */
 .icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 22px;
-    color: white;
-    margin: 5px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex; /* ترتيب داخلي مرن */
+    align-items: center; /* محاذاة عمودية */
+    justify-content: center; /* محاذاة أفقية */
+    width: 50px; /* العرض */
+    height: 50px; /* الارتفاع */
+    border-radius: 50%; /* دائرة */
+    font-size: 22px; /* حجم الأيقونة */
+    color: white; /* لون الأيقونة */
+    margin: 5px; /* مسافة بين الأزرار */
+    text-decoration: none; /* إزالة الخط */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* تأثير عند المرور */
 }
 
 .icon-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    transform: scale(1.1); /* تكبير الأيقونة */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3); /* ظل عند المرور */
 }
 
 .instagram-icon {
@@ -258,9 +258,9 @@ footer {
         #fdf497 5%, 
         #fd5949 45%, 
         #d6249f 60%, 
-        #285AEB 90%);
+        #285AEB 90%); /* ألوان إنستجرام */
 }
 
 .facebook-icon {
-    background: #1877f2;
+    background: #1877f2; /* لون فيسبوك */
 }
