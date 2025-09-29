@@ -1,17 +1,68 @@
+/* إعدادات عامة */
 body {
-    margin: 20px; /* مسافة خارجية حول الصفحة */
-    min-height: 100vh; /* الحد الأدنى للارتفاع: يملأ الشاشة كاملة */
-    display: flex; /* استخدام Flexbox لترتيب العناصر */
-    flex-direction: column; /* ترتيب العناصر عموديًا */
-    background: #ffffffff; /* لون الخلفية أسود */
-    font-family: Tahoma, Arial, sans-serif; /* خط الكتابة */
+    margin: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Tahoma, Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
 }
 
+/* ====== الوضع الفاتح ====== */
+body.light {
+    background: #f9f9f9;
+    color: #222;
+}
+
+body.light .header {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+body.light .text {
+    color: #2c3e50;
+}
+
+body.light .card {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body.light footer {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+/* ====== الوضع الداكن ====== */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .header {
+    background: linear-gradient(90deg, #1c1c1c, #2c2c2c);
+}
+
+body.dark .text {
+    color: #f5f5f5;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark footer {
+    background: rgba(255, 255, 255, 0.05);
+    color: #bbb;
+}
+
+/* ====== الهيدر ====== */
 .header {
     position: relative;
     width: 100%;
     height: 70px;
-    background: linear-gradient(90deg, #2c3e50, #34495e); /* تدرج ألوان */
     color: #fff;
     display: flex;
     align-items: center;
@@ -29,10 +80,10 @@ body {
 .text {
     font-size: 16px;
     font-weight: 500;
-    color: #ecf0f1;
     margin-left: 15px;
 }
 
+/* ====== صندوق البحث ====== */
 .search-box {
     display: flex;
     align-items: center;
@@ -68,170 +119,148 @@ body {
     background: #16a085;
 }
 
+/* زر تبديل الوضع */
+#toggleMode {
+    margin-right: 15px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #1abc9c;
+    font-size: 14px;
+    transition: 0.3s;
+    color: white;
+}
+
+#toggleMode:hover {
+    background: #16a085;
+}
+
+/* ====== صورة دائرية ====== */
 .image {
-    margin: 30px auto; /* مسافة خارجية من الأعلى والأسفل، وتوسيط أفقي */
-    width: 380px; /* عرض الصورة */
-    height: 250px; /* ارتفاع الصورة */
-    border-radius: 50%; /* يجعل الصورة دائرية */
-    overflow: hidden; /* يمنع خروج أي جزء من الصورة خارج الحدود */
-    border: 5px solid #ddd; /* إطار حول الصورة */
-    transition: 0.4s; /* تأثير سلس عند التغير */
-    cursor: pointer; /* مؤشر الماوس يتحول لليد عند المرور */
+    margin: 30px auto;
+    width: 380px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ddd;
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .image img {
-    width: 100%; /* عرض الصورة كامل العنصر */
-    height: 100%; /* ارتفاع الصورة كامل العنصر */
-    object-fit: cover; /* تغطية العنصر بالكامل مع الحفاظ على النسب */
-    transition: 0.4s; /* تأثير سلس عند التغير */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
 }
 
 .image:hover {
-    border-color: #4beae8; /* تغيير لون الإطار */
-    box-shadow: 0 0 20px rgba(46, 192, 211, 0.6); /* ظل حول الصورة */
+    border-color: #4beae8;
+    box-shadow: 0 0 20px rgba(46, 192, 211, 0.6);
 }
 
 .image:hover img {
-    transform: scale(1.1); /* تكبير الصورة 10% */
-    filter: brightness(1.2); /* زيادة السطوع */
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
+/* ====== النصوص ====== */
 .textalign {
-    text-align:center; /* توسيط النص */
-    margin-bottom:30px; /* مسافة أسفل النص */
-    color: #000000ff; /* لون النص */
-    font-size: 30px; /* حجم الخط */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .bottom-right {
     text-align: right;
-    bottom: 60px; /* مسافة من الأسفل */
-    right: 20px; /* مسافة من اليمين */
-    color: #000000ff; /* لون النص */
-    padding: 8px 12px; /* حشوة داخلية */
-    border-radius: 6px; /* حواف دائرية */
-    font-size: 25px; /* حجم الخط */
+    bottom: 60px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 25px;
 }
 
+/* ====== شبكة الكروت ====== */
 .grid {
-    margin-top: 20px; /* مسافة من الأعلى */
-    display: grid; /* استخدام Grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* أعمدة قابلة للتكيف */
-    gap: 20px; /* المسافة بين العناصر */
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: #fff; /* خلفية بيضاء */
-    border-radius: 10px; /* حواف دائرية */
-    box-shadow: 0 6px 14px rgba(184, 176, 176, 0.3); /* ظل خفيف */
-    padding: 10px; /* حشوة داخلية */
-    text-align: center; /* توسيط النصوص داخل الكرت */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px); /* رفع الكرت قليلاً */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ظل أغمق */
+    transform: translateY(-8px);
 }
 
 .card img {
-    width: 100%; /* تغطي كامل الكرت */
-    height: 250px; /* ارتفاع ثابت */
-    object-fit: cover; /* تغطية العنصر بالكامل مع الحفاظ على النسب */
-    border-radius: 8px; /* حواف دائرية */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
+/* ====== الأزرار ====== */
 .btn {
-    display: inline-block; /* زر يظهر في نفس السطر مع العناصر الأخرى */
-    padding: 10px 15px; /* حشوة داخلية */
-    margin-top: 20px; /* مسافة فوق الزر */
-    background: #04b5b2; /* لون الخلفية */
-    color: #ffffff; /* لون النص */
-    border: none; /* إزالة الحدود */
-    border-radius: 8px; /* حواف دائرية */
-    text-decoration: none; /* إزالة تحت الخط */
-    font-weight: bold; /* سماكة الخط */
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background: #04b5b2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #cd146a; /* تغيير اللون */
+    background: #cd146a;
 }
 
+/* ====== الفوتر ====== */
 footer {
-    background: rgba(0,0,0,0.1); /* خلفية شبه شفافة */
-    color: #ffffff; /* لون النص */
-    text-align: center; /* توسيط النص */
-    padding: 20px 0; /* مسافة عمودية */
-    margin-top: auto; /* دفع الفوتر لأسفل الصفحة */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
 }
 
+/* ====== أيقونات السوشيال ====== */
 .icon-btn {
-  display: inline-flex; /* ترتيب محتوى الزر بشكل مرن */
-  align-items: center; /* محاذاة محتوى الزر عموديًا */
-  justify-content: center; /* محاذاة محتوى الزر أفقيًا */
-  width: 50px; /* عرض الدائرة */
-  height: 50px; /* ارتفاع الدائرة */
-  border-radius: 50%; /* يجعل الزر دائري */
-  font-size: 22px; /* حجم الأيقونة */
-  color: white; /* لون الأيقونة */
-  margin: 5px; /* مسافة بين الأزرار */
-  text-decoration: none; /* إزالة خط تحت النص */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* تأثير سلس عند التكبير والظل */
-}
-
-.instagram-icon {
-  background: radial-gradient(circle at 30% 107%, 
-      #fdf497 0%, 
-      #fdf497 5%, 
-      #fd5949 45%, 
-      #d6249f 60%, 
-      #285AEB 90%); /* تدرج لوني مطابق للشعار الرسمي */
-}
-
-.facebook-icon {
-  background: #1877f2; /* اللون الرسمي للشعار */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: white;
+    margin: 5px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .icon-btn:hover {
-  transform: scale(1.1); /* تكبير الأيقونة 10% */
-  box-shadow: 0 6px 14px rgba(184, 176, 176, 0.3); /* إضافة ظل عند المرور */
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
-body.light {
-  background: #f5f5f5;
-  color: #222;
+.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, 
+        #fdf497 0%, 
+        #fdf497 5%, 
+        #fd5949 45%, 
+        #d6249f 60%, 
+        #285AEB 90%);
 }
 
-body.light .book-card {
-  background: #fff;
-  color: #000;
-}
-
-body.light .favorites {
-  background: #ddd;
-}
-
-body.dark {
-  background: #121212;
-  color: #fff;
-}
-
-body.dark .book-card {
-  background: #1e1e1e;
-  color: #fff;
-}
-
-body.dark .favorites {
-  background: #2c2c2c;
-}
-
-#toggleMode {
-  margin-right: 15px;
-  padding: 6px 14px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  background: #1abc9c;
-  font-size: 14px;
-  transition: 0.3s;
-  color: white;
+.facebook-icon {
+    background: #1877f2;
 }
