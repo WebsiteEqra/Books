@@ -4,7 +4,7 @@ body {
     min-height: 100vh; /* الحد الأدنى للارتفاع: يملأ الشاشة كاملة */
     display: flex; /* استخدام Flexbox لترتيب العناصر */
     flex-direction: column; /* ترتيب العناصر عموديًا */
-    background: #000000; /* لون الخلفية أسود */
+    background: #ffffffff; /* لون الخلفية أسود */
     font-family: Tahoma, Arial, sans-serif; /* خط الكتابة */
 }
 
@@ -13,7 +13,7 @@ body {
     position: relative; /* لتحديد مواضع العناصر بداخله بشكل مطلق */
     width: 100%; /* عرض كامل الصفحة */
     height: 60px; /* ارتفاع الهيدر */
-    color: #ffffff; /* لون النص */
+    color: #000000ff; /* لون النص */
 }
 
 /* تأثير عند المرور على الهيدر */
@@ -76,6 +76,7 @@ body {
 .textalign {
     text-align:center; /* توسيط النص */
     margin-bottom:30px; /* مسافة أسفل النص */
+    color: #000000ff; /* لون النص */
     font-size: 30px; /* حجم الخط */
 }
 
@@ -83,7 +84,7 @@ body {
 .bottom-right {
     bottom: 60px; /* مسافة من الأسفل */
     right: 20px; /* مسافة من اليمين */
-    color: #ffffff; /* لون النص */
+    color: #000000ff; /* لون النص */
     padding: 8px 12px; /* حشوة داخلية */
     border-radius: 6px; /* حواف دائرية */
     font-size: 25px; /* حجم الخط */
