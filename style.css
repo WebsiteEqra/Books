@@ -82,6 +82,7 @@ body {
 
 /* عنصر في أسفل يمين الصفحة */
 .bottom-right {
+    text-align: right;
     bottom: 60px; /* مسافة من الأسفل */
     right: 20px; /* مسافة من اليمين */
     color: #000000ff; /* لون النص */
