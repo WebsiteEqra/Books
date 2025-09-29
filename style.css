@@ -1,4 +1,3 @@
-/* جسم الصفحة */
 body {
     margin: 20px; /* مسافة خارجية حول الصفحة */
     min-height: 100vh; /* الحد الأدنى للارتفاع: يملأ الشاشة كاملة */
@@ -8,39 +7,67 @@ body {
     font-family: Tahoma, Arial, sans-serif; /* خط الكتابة */
 }
 
-/* الهيدر */
 .header {
-    position: relative; /* لتحديد مواضع العناصر بداخله بشكل مطلق */
-    width: 100%; /* عرض كامل الصفحة */
-    height: 60px; /* ارتفاع الهيدر */
-    color: #000000ff; /* لون النص */
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(90deg, #2c3e50, #34495e); /* تدرج ألوان */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-/* تأثير عند المرور على الهيدر */
 .header:hover {
-    transform: translateY(-8px); /* رفع الهيدر قليلاً لأعلى */
-    box-shadow: 0 6px 14px rgba(184, 176, 176, 0.3); /* ظل خفيف عند الهور */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
-/* نص على اليمين في الهيدر */
-.text1 {
-    position: absolute; /* تحديد مكان النص بشكل مطلق داخل الهيدر */
-    top: 10px; /* مسافة 10px من الأعلى */
-    right: 20px; /* مسافة 20px من اليمين */
-    font-size: 18px; /* حجم الخط */
-    font-weight: bold; /* سماكة الخط */
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ecf0f1;
+    margin-left: 15px;
 }
 
-/* نص على اليسار في الهيدر */
-.text2 {
-    position: absolute; 
-    top: 10px; 
-    left: 20px; 
-    font-size: 18px; 
-    font-weight: bold;
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* الصورة الرئيسية */
+.search-box input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    box-shadow: 0 0 8px #1abc9c;
+}
+
+.search-box button {
+    padding: 6px 14px;
+    background: #1abc9c;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #16a085;
+}
+
 .image {
     margin: 30px auto; /* مسافة خارجية من الأعلى والأسفل، وتوسيط أفقي */
     width: 380px; /* عرض الصورة */
@@ -52,7 +79,6 @@ body {
     cursor: pointer; /* مؤشر الماوس يتحول لليد عند المرور */
 }
 
-/* الصورة داخل العنصر */
 .image img {
     width: 100%; /* عرض الصورة كامل العنصر */
     height: 100%; /* ارتفاع الصورة كامل العنصر */
@@ -60,19 +86,16 @@ body {
     transition: 0.4s; /* تأثير سلس عند التغير */
 }
 
-/* تأثير عند المرور على الصورة */
 .image:hover {
     border-color: #4beae8; /* تغيير لون الإطار */
     box-shadow: 0 0 20px rgba(46, 192, 211, 0.6); /* ظل حول الصورة */
 }
 
-/* تأثير تكبير الصورة عند المرور */
 .image:hover img {
     transform: scale(1.1); /* تكبير الصورة 10% */
     filter: brightness(1.2); /* زيادة السطوع */
 }
 
-/* تنسيق النص المحوري */
 .textalign {
     text-align:center; /* توسيط النص */
     margin-bottom:30px; /* مسافة أسفل النص */
@@ -80,7 +103,6 @@ body {
     font-size: 30px; /* حجم الخط */
 }
 
-/* عنصر في أسفل يمين الصفحة */
 .bottom-right {
     text-align: right;
     bottom: 60px; /* مسافة من الأسفل */
@@ -91,7 +113,6 @@ body {
     font-size: 25px; /* حجم الخط */
 }
 
-/* شبكة الكروت */
 .grid {
     margin-top: 20px; /* مسافة من الأعلى */
     display: grid; /* استخدام Grid layout */
@@ -99,7 +120,6 @@ body {
     gap: 20px; /* المسافة بين العناصر */
 }
 
-/* الكرت الفردي */
 .card {
     background: #fff; /* خلفية بيضاء */
     border-radius: 10px; /* حواف دائرية */
@@ -108,13 +128,11 @@ body {
     text-align: center; /* توسيط النصوص داخل الكرت */
 }
 
-/* تأثير عند المرور على الكرت */
 .card:hover {
     transform: translateY(-8px); /* رفع الكرت قليلاً */
     box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ظل أغمق */
 }
 
-/* صورة داخل الكرت */
 .card img {
     width: 100%; /* تغطي كامل الكرت */
     height: 250px; /* ارتفاع ثابت */
@@ -122,7 +140,6 @@ body {
     border-radius: 8px; /* حواف دائرية */
 }
 
-/* زر */
 .btn {
     display: inline-block; /* زر يظهر في نفس السطر مع العناصر الأخرى */
     padding: 10px 15px; /* حشوة داخلية */
@@ -135,12 +152,10 @@ body {
     font-weight: bold; /* سماكة الخط */
 }
 
-/* تأثير الزر عند المرور */
 .btn:hover {
     background: #cd146a; /* تغيير اللون */
 }
 
-/* الفوتر */
 footer {
     background: rgba(0,0,0,0.1); /* خلفية شبه شفافة */
     color: #ffffff; /* لون النص */
@@ -149,7 +164,6 @@ footer {
     margin-top: auto; /* دفع الفوتر لأسفل الصفحة */
 }
 
-/* أيقونات الفوتر */
 .icon-btn {
   display: inline-flex; /* ترتيب محتوى الزر بشكل مرن */
   align-items: center; /* محاذاة محتوى الزر عموديًا */
@@ -164,7 +178,6 @@ footer {
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* تأثير سلس عند التكبير والظل */
 }
 
-/* أيقونة انستجرام */
 .instagram-icon {
   background: radial-gradient(circle at 30% 107%, 
       #fdf497 0%, 
@@ -174,13 +187,51 @@ footer {
       #285AEB 90%); /* تدرج لوني مطابق للشعار الرسمي */
 }
 
-/* أيقونة فيسبوك */
 .facebook-icon {
   background: #1877f2; /* اللون الرسمي للشعار */
 }
 
-/* تأثير عند المرور على أي أيقونة */
 .icon-btn:hover {
   transform: scale(1.1); /* تكبير الأيقونة 10% */
   box-shadow: 0 6px 14px rgba(184, 176, 176, 0.3); /* إضافة ظل عند المرور */
+}
+
+body.light {
+  background: #f5f5f5;
+  color: #222;
+}
+
+body.light .book-card {
+  background: #fff;
+  color: #000;
+}
+
+body.light .favorites {
+  background: #ddd;
+}
+
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+
+body.dark .book-card {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark .favorites {
+  background: #2c2c2c;
+}
+
+#toggleMode {
+  margin-right: 15px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #1abc9c;
+  font-size: 14px;
+  transition: 0.3s;
+  color: white;
 }
