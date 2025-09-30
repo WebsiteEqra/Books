@@ -12,6 +12,17 @@ body {
     transition: background 0.3s, color 0.3s; /* انتقال سلس بين الأوضاع */
 }
 
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 6px;
+  justify-content: center;
+}
+
+.btn-container button:nth-child(3) {
+  grid-column: span 2; /* يخلي الزر الثالث ياخد عرض العمودين */
+}
+
 /* ===== الوضع العادي (فاتح) ===== */
 body.light {
     background: #f7f7f7;              /* خلفية الصفحة رمادي فاتح */
