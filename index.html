@@ -14,8 +14,8 @@
         <div class="text">مرحبا بك في موقعنا موقع قراءه قم باختيار الكتابه التي تريد واستمتع بالقراءه</div>
 
         <div class="search-box">
-            <input type="text" id="authorSearch" placeholder="بحث عن كتاب...">
-            <button id="searchBtn">بحث</button>
+            <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+            <button onclick="searchBook()">بحث</button>
             <button id="toggleMode">🌙 الوضع الداكن</button>
         </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="grid">
         <div class="card">
             <img src="img/book1.jpg" alt="book1">
-            <a class="btn" href="book1.html">عرض الكتاب</a>
+            <a class="btn" href="book1.html" onclick="addView('book1')">عرض الكتاب</a>
         </div>
 
         <div class="card">
@@ -81,5 +81,14 @@
         </a>
     </footer>
     <script src="main.js"></script>
+    <script>
+function addView(book_id) {
+      fetch("books.php?action=view&book_id=" + book_id)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("views").innerText = data.views;
+        });
+    }
+</script>
 </body>
 </html>

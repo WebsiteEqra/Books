@@ -2,6 +2,8 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   <title>عرض الكتاب</title>
   <style>
 /* إعدادات عامة */
@@ -120,6 +122,40 @@ body.dark iframe {
 iframe {
     border-radius: 10px;              /* الحواف منحنية */
 }
+
+/* ===== تقييم الكتاب ===== */
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* مسافة بين النجوم والزر */
+}
+
+.rating span {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating span.active {
+  color: gold;
+}
+
+#unrateBtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#unrateBtn:hover {
+  background: #e60000;
+}
   </style>
 </head>
 <body>
@@ -136,9 +172,26 @@ iframe {
     <img src="img/book3.jpg" alt="book3">
   </div>
 
-  <div>
+  <div id="bookStats">
+    <p>👁️ المشاهدات: <span id="views">0</span></p>
+    <p>⭐ التقييم: <span id="avgRating">0</span> من <span id="totalVotes">0</span> تقييم</p>
+  </div>
+
+  <div class="rating-container">
+  <div class="rating">
+    <span data-value="1">★</span>
+    <span data-value="2">★</span>
+    <span data-value="3">★</span>
+    <span data-value="4">★</span>
+    <span data-value="5">★</span>
+  </div>
+  <button id="unrateBtn" style="display:none;" onclick="unrate()">إلغاء التقييم</button>
+  </div>
+
+  <div class="btn-container">
     <button onclick="goHome()">الرجوع للصفحة الرئيسية</button>
     <a class="btn" onclick="showPDF()">اقرأ الآن</a>
+    <button id="toggleMode">🌙 الوضع الداكن</button>
   </div>
 
   <div id="pdfViewer">
@@ -148,13 +201,100 @@ iframe {
   </div>
 
   <script>
-    function showPDF() {
-      document.getElementById("pdfViewer").style.display = "block";
-      window.scrollTo(0, document.getElementById("pdfViewer").offsetTop);
+const book_id = "book3"; // 👈 كل كتاب ليه معرف خاص بيه
+
+// ====== عند تحميل الصفحة ======
+document.addEventListener("DOMContentLoaded", () => {
+  // جلب البيانات الحالية من السيرفر
+  fetch("books.php?action=get&book_id=" + book_id)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("views").innerText = data.views;
+      document.getElementById("avgRating").innerText = data.avg.toFixed(1);
+      document.getElementById("totalVotes").innerText = data.votes;
+    });
+
+  // تسجيل مشاهدة واحدة فقط لكل مستخدم
+  if (!localStorage.getItem("viewed_" + book_id)) {
+    fetch("books.php?action=view&book_id=" + book_id);
+    localStorage.setItem("viewed_" + book_id, "true");
+  }
+
+  // لو كان المستخدم قيّم قبل كده → نرجع نلون النجوم ونظهر زر الإلغاء
+  let prevRating = localStorage.getItem("rated_" + book_id);
+  if (prevRating) {
+    highlightStars(prevRating);
+    document.getElementById("unrateBtn").style.display = "inline-block";
+  }
+});
+
+// ====== التعامل مع التقييم ======
+document.querySelectorAll(".rating span").forEach(star => {
+  star.addEventListener("click", () => {
+    let value = star.getAttribute("data-value");
+
+    // لو المستخدم قيم قبل كده → منع التقييم مرة تانية
+    if (localStorage.getItem("rated_" + book_id)) {
+      alert("لقد قمت بتقييم هذا الكتاب من قبل!");
+      return;
     }
-    function goHome() {
-      window.location.href = "index.html"; 
+
+    fetch("books.php?action=rate&book_id=" + book_id + "&value=" + value)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("views").innerText = data.views;
+        document.getElementById("avgRating").innerText = data.avg.toFixed(1);
+        document.getElementById("totalVotes").innerText = data.votes;
+        highlightStars(value);
+        localStorage.setItem("rated_" + book_id, value);
+        document.getElementById("unrateBtn").style.display = "inline-block";
+      });
+  });
+});
+
+// ====== زر إلغاء التقييم ======
+document.getElementById("unrateBtn").addEventListener("click", () => {
+  let prevRating = localStorage.getItem("rated_" + book_id);
+  if (!prevRating) return;
+
+  fetch("books.php?action=unrate&book_id=" + book_id + "&value=" + prevRating)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("views").innerText = data.views;
+      document.getElementById("avgRating").innerText = data.avg.toFixed(1);
+      document.getElementById("totalVotes").innerText = data.votes;
+      resetStars();
+      localStorage.removeItem("rated_" + book_id);
+      document.getElementById("unrateBtn").style.display = "none";
+    });
+});
+
+// ====== دوال مساعدة ======
+function highlightStars(value) {
+  document.querySelectorAll(".rating span").forEach(star => {
+    if (parseInt(star.getAttribute("data-value")) <= value) {
+      star.classList.add("active");
+    } else {
+      star.classList.remove("active");
     }
+  });
+}
+
+function resetStars() {
+  document.querySelectorAll(".rating span").forEach(star => {
+    star.classList.remove("active");
+  });
+}
+
+function showPDF() {
+  document.getElementById("pdfViewer").style.display = "block";
+  window.scrollTo(0, document.getElementById("pdfViewer").offsetTop);
+}
+
+function goHome() {
+  window.location.href = "index.html"; 
+}
   </script>
+  <script src="main.js"></script>
 </body>
 </html>
